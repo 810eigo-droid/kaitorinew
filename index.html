@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<!--
+  =========================================================
+  ガーデン買取サポート LP
+  =========================================================
+
+  【画像の追加方法】
+  HTMLと同じ階層に「images」フォルダを作成し、
+  以下のファイル名で画像（WebP形式）を入れるだけで自動表示されます。
+
+  images/
+  ├ logo.webp              ガーデン様ロゴ（ヘッダー/フッター共通）
+  ├ hero-main.webp         ヒーロー統合ビジュアル（家＋スタッフ）  (1500×1100)
+  ├ hero-sp1.webp          【SP専用】ヒーローFV画像                ( 793×1662)
+  ├ hero-sp2.webp          【SP専用】「無料で相談してみる」ボタン   ( 793×163)
+  ├ hero-sp3.webp          【SP専用】「お電話で相談」ボタン         ( 793×161)
+  ├ back-ground.webp       ポイント＆フッター背景（ストライプ柄）   (1600×900)
+  ├ point01.webp           ポイント1：専門知識              ( 400×400)
+  ├ point02.webp           ポイント2：秘密厳守              ( 400×400)
+  ├ point03.webp           ポイント3：17年の実績            ( 400×400)
+  ├ cta-bg.webp            CTA背景画像（透かし用 任意）     (1920×800)
+  └ cta-consultation.webp  CTA 相談シーン                  (1024×1024)
+
+  ※ hero-sp1〜3.webp はスマホ表示（640px以下）でのみ使用されます。
+  ※ PC表示では通常のヒーローデザインが表示されます。
+
+  ※画像が無い場合はプレースホルダー（青いパネル）が表示されます。
+  ※画像を入れると自動でプレースホルダーは隠れます。
+  =========================================================
+-->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>土地・建物の買取は安心のガーデン買取サポートに | 株式会社ガーデン</title>
+<meta name="description" content="沖縄の土地・建物の買取は、設立17年目のガーデン買取サポートにおまかせください。秘密厳守・査定無料・最短3日でお見積り。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@500;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-primary: #1d5ba5;
+  --blue-deep: #0d3a6b;
+  --blue-dark: #082348;
+  --blue-mid: #3a82c7;
+  --blue-light: #e8f1fa;
+  --blue-pale: #f4f8fc;
+  --blue-paler: #fafcfe;
+  --blue-soft: #b4d0e9;
+  --text-dark: #1a2a3e;
+  --text-body: #3a4a5e;
+  --text-muted: #7a8a9e;
+  --white: #ffffff;
+  --gold: #c9a96e;
+  --blue-slate: #6b7da0;
+  --blue-periwinkle: #a8c2e8;
+  --blue-lavender: #ecf1f8;
+  --blue-lavender-pale: #f6f9fd;
+  --yellow: #ffd23f;
+  --yellow-mark: rgba(255, 210, 63, 0.45);
+  --line: rgba(29, 91, 165, 0.12);
+  --font-display: 'Noto Serif JP', serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+  --font-en: 'Cormorant Garamond', serif;
+  --font-en-sans: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--white);
+  line-height: 1.85;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ====== ILLUSTRATION PLACEHOLDER ====== */
+.illust {
+  position: relative;
+  background: linear-gradient(135deg, var(--blue-pale) 0%, var(--blue-light) 100%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  overflow: hidden;
+  border: 1px dashed rgba(29, 91, 165, 0.3);
+}
+.illust::before {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(29, 91, 165, 0.1);
+  border-radius: 4px;
+  pointer-events: none;
+}
+.illust-icon {
+  width: 36%;
+  max-width: 100px;
+  opacity: 0.4;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.illust-icon svg { width: 100%; height: auto; }
+.illust-label {
+  font-family: var(--font-en-sans);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--blue-mid);
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.illust-name {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-en-sans);
+}
+/* When real image is added — it overlays the placeholder */
+.illust > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+  border-radius: inherit;
+  display: block;
+}
+.illust.illust-contain > img { object-fit: contain; }
+
+/* ====== HEADER ====== */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.tel-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+.tel-label {
+  font-family: var(--font-en-sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.tel-number {
+  font-family: var(--font-en-sans);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  letter-spacing: 0.02em;
+}
+.btn-header {
+  background: var(--blue-primary);
+  color: var(--white);
+  padding: 14px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-header:hover {
+  background: var(--blue-deep);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(29, 91, 165, 0.3);
+}
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  padding: 140px 40px 110px;
+  background: linear-gradient(180deg, var(--blue-paler) 0%, var(--white) 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(29, 91, 165, 0.07) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(58, 130, 199, 0.06) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.hero-deco-dots {
+  position: absolute;
+  top: 130px;
+  right: 60px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle, var(--blue-soft) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.4;
+  z-index: 0;
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow-line {
+  width: 36px;
+  height: 1px;
+  background: var(--blue-primary);
+}
+.hero-eyebrow-text {
+  font-family: var(--font-en-sans);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--blue-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.45;
+  color: var(--blue-deep);
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+}
+.hero-title .lead {
+  font-size: 26px;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+}
+.hero-title .highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--blue-deep);
+}
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  height: 14px;
+  background: var(--yellow-mark);
+  z-index: -1;
+  border-radius: 2px;
+}
+.hero-desc {
+  font-size: 16px;
+  color: var(--text-body);
+  margin-bottom: 36px;
+  line-height: 2;
+}
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  box-shadow: 0 2px 8px rgba(29, 91, 165, 0.04);
+}
+.hero-trust-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-primary);
+  flex-shrink: 0;
+}
+.hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--blue-primary);
+  color: var(--white);
+  padding: 22px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(29, 91, 165, 0.25);
+  letter-spacing: 0.05em;
+}
+.btn-primary:hover {
+  background: var(--blue-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(29, 91, 165, 0.4);
+}
+.btn-primary svg { width: 18px; height: 18px; }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  color: var(--blue-primary);
+  padding: 20px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+  border: 2px solid var(--blue-primary);
+  letter-spacing: 0.05em;
+}
+.btn-secondary:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+}
+.btn-secondary svg { width: 18px; height: 18px; }
+
+/* Hero visual area */
+.hero-visual {
+  position: relative;
+  height: 560px;
+}
+.hero-visual-main {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: 16px;
+}
+.hero-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: var(--blue-deep);
+  color: var(--white);
+  padding: 14px 22px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 13px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 20px rgba(13, 58, 107, 0.3);
+}
+.hero-badge-num {
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--yellow);
+  font-style: italic;
+}
+
+/* ====== SECTION COMMONS ====== */
+.section {
+  padding: 110px 40px;
+  position: relative;
+}
+.section-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 72px;
+}
+.section-label {
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue-primary);
+  font-style: italic;
+  letter-spacing: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--blue-primary);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--blue-deep);
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+.section-title .accent { color: var(--blue-primary); }
+.section-sub {
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+}
+
+/* ====== POINTS ====== */
+.points {
+  background: url('images/back-ground.webp') center center / cover no-repeat;
+  background-color: var(--blue-deep);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+.points::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.points::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(168, 194, 232, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.points .section-label { color: var(--blue-periwinkle); }
+.points .section-label::before,
+.points .section-label::after { background: var(--blue-periwinkle); }
+.points .section-title { color: var(--white); }
+.points .section-title .accent { color: var(--blue-periwinkle); }
+.points .section-sub { color: rgba(255, 255, 255, 0.85); }
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.point-card {
+  background: var(--white);
+  padding: 48px 36px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  position: relative;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.point-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-mid));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.point-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(13, 58, 107, 0.12);
+  border-color: transparent;
+}
+.point-card:hover::before { transform: scaleX(1); }
+.point-num {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-family: var(--font-en);
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--blue-periwinkle);
+  font-style: italic;
+  line-height: 1;
+  opacity: 0.55;
+}
+.point-illust {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 28px;
+}
+.point-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.point-desc {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.95;
+}
+
+/* ====== FAQ ====== */
+.faq { background: var(--white); }
+.faq-deco {
+  position: absolute;
+  top: 80px;
+  right: 60px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.5;
+  z-index: 0;
+}
+.faq-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.faq-item:hover {
+  border-color: var(--blue-soft);
+  box-shadow: 0 10px 30px rgba(29, 91, 165, 0.06);
+}
+.faq-item.open {
+  border-color: var(--blue-primary);
+  box-shadow: 0 10px 30px rgba(29, 91, 165, 0.1);
+}
+.faq-q {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 30px;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  flex-shrink: 0;
+}
+.faq-q-text {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  line-height: 1.6;
+}
+.faq-q-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q-toggle {
+  background: var(--blue-primary);
+  color: var(--white);
+  transform: rotate(180deg);
+}
+.faq-q-toggle svg { width: 14px; height: 14px; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 30px 28px 30px;
+  border-top: 1px dashed var(--line);
+  margin-top: 0;
+  padding-top: 24px;
+}
+.faq-a-mark {
+  width: 44px;
+  height: 44px;
+  background: var(--blue-pale);
+  color: var(--blue-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  flex-shrink: 0;
+  border: 1.5px solid var(--blue-primary);
+}
+.faq-a-text {
+  flex: 1;
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 2;
+}
+
+/* ====== COMPANY ====== */
+.company {
+  background: linear-gradient(180deg, #a0cbf7 0%, #c8def9 100%);
+  position: relative;
+  overflow: hidden;
+}
+.company::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 62%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.company::after {
+  content: '';
+  position: absolute;
+  bottom: -140px;
+  left: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, transparent 62%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.company-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: center;
+}
+/* Left column — heading + lead text */
+.company-text .section-label {
+  justify-content: flex-start;
+  color: var(--blue-primary);
+}
+.company-text .section-label::before { display: none; }
+.company-text .section-label::after { background: var(--blue-primary); }
+.company-text .section-title {
+  text-align: left;
+  color: var(--blue-deep);
+}
+.company-text .section-title .accent { color: var(--blue-primary); }
+.company-lead {
+  margin-top: 22px;
+  font-size: 16px;
+  line-height: 2.1;
+  color: var(--blue-deep);
+}
+.company-badge {
+  margin-top: 28px;
+}
+.company-badge .stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 14px 26px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.company-badge .stat b {
+  font-family: var(--font-en);
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--blue-primary);
+  line-height: 1;
+}
+.company-badge .stat span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  letter-spacing: 0.08em;
+}
+/* Right column — white info panel */
+.company-info {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 14px 40px;
+  box-shadow: 0 24px 60px rgba(13, 58, 107, 0.18);
+  display: grid;
+  grid-template-columns: 130px 1fr;
+}
+.company-info dt,
+.company-info dd {
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.company-info dt {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  letter-spacing: 0.05em;
+}
+.company-info dd {
+  font-size: 14px;
+  color: var(--text-body);
+}
+.company-info dt:nth-last-of-type(1),
+.company-info dd:nth-last-of-type(1) {
+  border-bottom: none;
+}
+
+/* ====== CTA ====== */
+.cta {
+  background: var(--white);
+  color: var(--text-dark);
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(29, 91, 165, 0.05) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 5%;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(107, 125, 160, 0.1) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.cta-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-text .section-label { color: var(--blue-primary); justify-content: flex-start; }
+.cta-text .section-label::before { display: none; }
+.cta-text .section-label::after { background: var(--blue-primary); }
+.cta-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin: 18px 0 24px;
+  letter-spacing: 0.03em;
+  color: var(--blue-deep);
+}
+.cta-desc {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--text-body);
+  margin-bottom: 40px;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.cta-btn-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--blue-primary);
+  color: var(--white);
+  padding: 22px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(29, 91, 165, 0.25);
+}
+.cta-btn-mail:hover {
+  background: var(--blue-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(29, 91, 165, 0.4);
+}
+.cta-btn-mail svg { width: 18px; height: 18px; }
+.cta-btn-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--blue-pale);
+  color: var(--blue-deep);
+  padding: 18px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1.5px solid var(--blue-soft);
+  transition: all 0.3s;
+}
+.cta-btn-tel:hover {
+  background: var(--blue-light);
+  border-color: var(--blue-primary);
+}
+.cta-btn-tel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cta-btn-tel-icon svg { width: 20px; height: 20px; }
+.cta-btn-tel-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.cta-btn-tel-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: var(--font-en-sans);
+}
+.cta-btn-tel-number {
+  display: block;
+  font-family: var(--font-en-sans);
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 2px;
+  color: var(--blue-deep);
+  white-space: nowrap;
+}
+.cta-visual {
+  position: relative;
+  height: 460px;
+}
+.cta-visual-main {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background: url('images/back-ground.webp') center center / cover no-repeat;
+  background-color: var(--blue-dark);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 60px 40px 30px;
+  position: relative;
+}
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+.footer-logo-img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+.footer-info {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer-copy {
+  text-align: center;
+  font-family: var(--font-en-sans);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+/* ====== FLOATING MOBILE CTA ====== */
+.float-cta { display: none; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 980px) {
+  .hero-inner,
+  .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-title { font-size: 40px; }
+  .hero-title .lead { font-size: 22px; }
+  .section-title, .cta-title { font-size: 32px; }
+  .points-grid { grid-template-columns: 1fr; }
+  .hero-visual { height: 480px; }
+  .hero-visual-main { height: 100%; }
+  .cta-visual { height: 420px; }
+  .section { padding: 80px 24px; }
+  .hero { padding: 120px 24px 80px; }
+  .header-inner { padding: 12px 20px; }
+  .tel-link { display: none; }
+  .btn-header { padding: 10px 18px; font-size: 12px; }
+  .logo-img { height: 36px; }
+  .header-actions { gap: 12px; }
+  .hero-cta-group { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .company-inner { grid-template-columns: 1fr; gap: 40px; }
+  .company-text .section-title { font-size: 32px; }
+  .company-info { padding: 12px 28px; }
+  .faq-q { padding: 18px 20px; }
+  .faq-a-inner { padding: 18px 20px 22px; }
+  .faq-q-text { font-size: 15px; }
+  body { padding-bottom: 80px; }
+  .float-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    padding: 10px;
+    gap: 8px;
+    z-index: 99;
+    box-shadow: 0 -4px 20px rgba(13, 58, 107, 0.1);
+  }
+  .float-cta a {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+  .float-cta-tel { background: var(--blue-pale); color: var(--blue-deep); }
+  .float-cta-mail { background: var(--blue-primary); color: var(--white); }
+}
+
+/* ====== MOBILE (≤640px) — refined SP layout ====== */
+@media (max-width: 640px) {
+  /* Header */
+  .header-inner { padding: 10px 16px; }
+  .logo-img { height: 32px; }
+  .btn-header { padding: 9px 14px; font-size: 11px; }
+  .btn-header svg { width: 10px; height: 10px; }
+
+  /* Hero */
+  .hero { padding: 100px 22px 60px; }
+  .hero-inner { gap: 32px; }
+  .hero-eyebrow { margin-bottom: 14px; }
+  .hero-eyebrow-line { width: 22px; }
+  .hero-eyebrow-text { font-size: 9px; letter-spacing: 0.25em; }
+  .hero-title { font-size: 26px; line-height: 1.5; margin-bottom: 14px; }
+  .hero-title .lead { font-size: 17px; margin-bottom: 6px; }
+  .hero-title .highlight::after { bottom: 3px; height: 7px; }
+  .hero-desc { font-size: 14px; line-height: 1.95; margin-bottom: 24px; }
+
+  /* Hero visual — single combined illustration */
+  .hero-visual { height: 280px; }
+  .hero-visual-main { height: 100%; }
+  .hero-badge {
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 10px;
+    gap: 8px;
+  }
+  .hero-badge-num { font-size: 16px; }
+
+  /* Trust badges — 2-row compact */
+  .hero-trust { gap: 6px; margin-bottom: 22px; }
+  .hero-trust-item {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+  .hero-trust-item svg { width: 11px; height: 11px; }
+
+  /* CTA buttons */
+  .btn-primary { padding: 17px; font-size: 14px; letter-spacing: 0.06em; }
+  .btn-secondary { padding: 14px; font-size: 13px; letter-spacing: 0.06em; }
+  .btn-primary svg, .btn-secondary svg { width: 14px; height: 14px; }
+
+  /* Section commons */
+  .section { padding: 64px 22px; }
+  .section-head { margin-bottom: 48px; }
+  .section-label { font-size: 13px; margin-bottom: 14px; gap: 12px; }
+  .section-label::before, .section-label::after { width: 22px; }
+  .section-title, .cta-title { font-size: 26px; line-height: 1.5; }
+  .section-sub { font-size: 13px; margin-top: 14px; }
+
+  /* Points */
+  .points-grid { gap: 18px; }
+  .point-card { padding: 36px 26px; }
+  .point-num { font-size: 48px; top: 22px; right: 24px; }
+  .point-illust { width: 100px; height: 100px; margin-bottom: 20px; }
+  .point-title { font-size: 19px; margin-bottom: 12px; }
+  .point-desc { font-size: 14px; }
+
+  /* FAQ */
+  .faq-q { padding: 16px 18px; gap: 14px; }
+  .faq-q-mark { width: 36px; height: 36px; font-size: 18px; }
+  .faq-q-text { font-size: 14px; line-height: 1.65; }
+  .faq-q-toggle { width: 28px; height: 28px; }
+  .faq-a-inner { padding: 16px 18px 20px; gap: 14px; padding-top: 18px; }
+  .faq-a-mark { width: 36px; height: 36px; font-size: 18px; }
+  .faq-a-text { font-size: 14px; line-height: 1.9; }
+
+  /* Company */
+  .company-info { padding: 8px 20px; grid-template-columns: 95px 1fr; border-radius: 14px; }
+  .company-info dt { font-size: 12px; padding: 14px 4px; }
+  .company-info dd { font-size: 13px; padding: 14px 4px; }
+  .company-lead { font-size: 14px; line-height: 2; }
+  .company-badge { margin-top: 22px; }
+  .company-badge .stat { padding: 12px 20px; }
+  .company-badge .stat b { font-size: 26px; }
+  .company-badge .stat span { font-size: 12px; }
+
+  /* CTA section */
+  .cta-desc { font-size: 14px; margin-bottom: 28px; }
+  .cta-actions { gap: 12px; flex-direction: column; }
+  .cta-btn-mail, .cta-btn-tel { width: 100%; }
+  .cta-btn-mail { padding: 17px; font-size: 14px; justify-content: center; }
+  .cta-btn-tel {
+    padding: 14px 18px;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .cta-btn-tel-icon { width: 38px; height: 38px; }
+  .cta-btn-tel-icon svg { width: 16px; height: 16px; }
+  .cta-btn-tel-label { font-size: 10px; letter-spacing: 0.1em; }
+  .cta-btn-tel-number { font-size: 20px; }
+  .cta-visual { height: 280px; }
+
+  /* Footer */
+  .footer { padding: 40px 22px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; padding-bottom: 20px; }
+  .footer-logo-img { height: 40px; }
+  .footer-info { font-size: 12px; }
+}
+
+/* Subtle entrance animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+.fade-up.d1 { animation-delay: 0.1s; }
+.fade-up.d2 { animation-delay: 0.25s; }
+.fade-up.d3 { animation-delay: 0.4s; }
+.fade-up.d4 { animation-delay: 0.55s; }
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== SP-ONLY HERO IMAGE STACK ====== */
+.sp-hero-stack { display: none; }
+
+@media (max-width: 640px) {
+  /* Hide regular hero content on SP */
+  .hero { padding: 56px 0 0 0 !important; }
+  .hero::before,
+  .hero::after,
+  .hero-deco-dots,
+  .hero-inner { display: none !important; }
+
+  /* Show SP image hero */
+  .sp-hero-stack {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    font-size: 0;
+  }
+  .sp-hero-stack img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .sp-hero-stack a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .sp-hero-stack a:active { opacity: 0.75; }
+}
+
+/* ====== SCROLL PROGRESS BAR ====== */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--yellow) 0%, #ffb800 100%);
+  z-index: 200;
+  width: 0%;
+  box-shadow: 0 0 12px rgba(255, 210, 63, 0.7);
+  pointer-events: none;
+}
+
+/* ====== KEYFRAMES ====== */
+@keyframes drawMarker {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(13, 58, 107, 0.3), 0 0 0 0 rgba(255, 210, 63, 0); }
+  50%      { box-shadow: 0 8px 20px rgba(13, 58, 107, 0.3), 0 0 24px 4px rgba(255, 210, 63, 0.35); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes drawLine {
+  from { width: 0; opacity: 0; }
+  to   { width: 60px; opacity: 1; }
+}
+@keyframes bounceIn {
+  0%   { transform: scale(0.6); opacity: 0; }
+  60%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* ====== APPLIED ANIMATIONS ====== */
+/* Hero marker — draws in on page load */
+.hero-title .highlight::after {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: drawMarker 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.7s forwards;
+}
+
+/* Hero badge — gentle floating + glow pulse */
+.hero-badge {
+  animation: float 3.5s ease-in-out infinite, glowPulse 2.6s ease-in-out infinite;
+}
+
+/* Trust badges — staggered entrance */
+.hero-trust-item {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.hero-trust-item:nth-child(1) { animation-delay: 0.5s; }
+.hero-trust-item:nth-child(2) { animation-delay: 0.65s; }
+.hero-trust-item:nth-child(3) { animation-delay: 0.8s; }
+.hero-trust-item:nth-child(4) { animation-delay: 0.95s; }
+
+/* Yellow check icons in trust badges (color upgrade) */
+.hero-trust-item svg { color: #e8a000; }
+
+/* Section title — yellow underline draws in on scroll-in */
+.section-title {
+  position: relative;
+  padding-bottom: 18px;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--yellow);
+  border-radius: 2px;
+  transition: width 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+}
+.section-head.is-visible .section-title::after,
+.section-head.section-head-left.is-visible + * .section-title::after { width: 60px; }
+.company-text.is-visible .section-title::after,
+.cta-text.is-visible .section-title::after { width: 60px; }
+/* Left-aligned variants (company/cta) */
+.cta-text .section-title,
+.company-text .section-title { padding-bottom: 18px; }
+.cta-text .section-title::after,
+.company-text .section-title::after { left: 0; transform: none; }
+
+/* Section label — line that draws in */
+.section-label::before,
+.section-label::after { transition: width 0.6s ease 0.1s; }
+.section-head:not(.is-visible) .section-label::before,
+.section-head:not(.is-visible) .section-label::after { width: 0; }
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Point card — enhanced hover with yellow accent */
+.point-card::before {
+  background: linear-gradient(90deg, var(--blue-primary), var(--yellow));
+  height: 4px;
+}
+.point-card { transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.point-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 25px 60px rgba(13, 58, 107, 0.18),
+    0 -2px 20px rgba(255, 210, 63, 0.18);
+}
+.point-card:hover .point-num {
+  color: var(--yellow);
+  opacity: 0.8;
+  transform: scale(1.1) rotate(-5deg);
+  transition: all 0.4s ease;
+}
+.point-num { transition: all 0.4s ease; }
+
+/* Point illust — wiggle on hover */
+.point-card:hover .point-illust {
+  animation: wiggle 0.6s ease;
+}
+
+/* Key-mark — yellow highlight on important keywords */
+.key-mark {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  color: var(--blue-deep);
+  white-space: nowrap;
+}
+.key-mark::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: -4px;
+  right: -4px;
+  height: 10px;
+  background: var(--yellow-mark);
+  z-index: -1;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.is-visible .key-mark::after,
+.point-card.is-visible .key-mark::after { transform: scaleX(1); }
+.point-card.reveal-delay-1.is-visible .key-mark::after { transition-delay: 0.5s; }
+.point-card.reveal-delay-2.is-visible .key-mark::after { transition-delay: 0.7s; }
+.point-card.reveal-delay-3.is-visible .key-mark::after { transition-delay: 0.9s; }
+
+/* Decorative giant section numbers (yellow, faded) */
+.section-deco {
+  position: absolute;
+  font-family: var(--font-en);
+  font-size: 320px;
+  font-weight: 700;
+  color: var(--yellow);
+  opacity: 0.12;
+  font-style: italic;
+  line-height: 0.8;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.05em;
+}
+.points .section-deco { top: 40px; right: 5%; opacity: 0.18; }
+.faq .section-deco { top: 60px; left: 4%; opacity: 0.28; color: var(--yellow); }
+
+/* Primary button — shimmer effect on hover */
+.btn-primary,
+.cta-btn-mail {
+  background: linear-gradient(110deg,
+    var(--blue-primary) 0%, var(--blue-primary) 40%,
+    rgba(255, 210, 63, 0.3) 50%,
+    var(--blue-primary) 60%, var(--blue-primary) 100%);
+  background-size: 250% 100%;
+  background-position: 100% center;
+  transition: background-position 0.7s ease, transform 0.3s, box-shadow 0.3s;
+}
+.btn-primary:hover,
+.cta-btn-mail:hover {
+  background-position: -100% center;
+}
+
+/* FAQ — yellow accent on open */
+.faq-item.open { border-color: var(--yellow); }
+.faq-item.open .faq-q-mark {
+  background: var(--yellow);
+  color: var(--blue-deep);
+  transition: all 0.3s;
+}
+.faq-q-mark { transition: all 0.3s; }
+.faq-item:hover .faq-q-mark { transform: scale(1.08); }
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: var(--yellow);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s, visibility 0s 0.4s;
+  box-shadow: 0 10px 30px rgba(255, 210, 63, 0.5);
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s, visibility 0s;
+}
+.back-to-top:hover {
+  background: #ffb800;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(255, 210, 63, 0.7);
+}
+.back-to-top svg { width: 22px; height: 22px; color: var(--blue-deep); }
+@media (max-width: 640px) {
+  .back-to-top { bottom: 80px; right: 16px; width: 48px; height: 48px; }
+  .back-to-top svg { width: 18px; height: 18px; }
+  .section-deco { font-size: 180px; }
+}
+
+/* Hero CTA button — subtle yellow accent on hover */
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.btn-secondary:hover::after { transform: scaleX(1); }
+
+/* Header CTA button — subtle pulse to draw attention */
+.btn-header { position: relative; }
+.btn-header::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: var(--yellow);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-header:hover::after { opacity: 0.4; }
+
+/* Company stat badge — bounce-in number when visible */
+.company-text.is-visible .company-badge .stat b {
+  display: inline-block;
+  animation: bounceIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+</style>
+</head>
+<body>
+
+<!-- ====== SCROLL PROGRESS BAR ====== -->
+<div class="scroll-progress"></div>
+
+<!-- ====== HEADER ====== -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img src="images/logo.webp" alt="株式会社ガーデン" class="logo-img">
+    </a>
+    <div class="header-actions">
+      <a href="tel:0989886663" class="tel-link">
+        <span class="tel-label">Tel / 受付 9:00 - 18:00</span>
+        <span class="tel-number">098-988-6663</span>
+      </a>
+      <a href="#contact" class="btn-header">
+        無料でお問合せ
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-deco-dots"></div>
+  <div class="hero-inner">
+    <div class="hero-text fade-up d1">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span class="hero-eyebrow-text">Garden Real Estate Purchase</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="lead">不動産の買取は</span>
+        安心の<span class="highlight">ガーデン買取プレミアム</span><br>
+        に全ておまかせ！
+      </h1>
+      <p class="hero-desc">
+  ・空き家をどうするか悩んでいる。<br>
+  ・早く現金化したい。<br>
+  ・近所に知られず売却したい。<br>
+  このようなお悩みもすべてお任せください。<br>
+  ご相談・お見積りは無料、秘密厳守で対応いたします。
+</p>
+      <div class="hero-trust">
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          査定無料
+        </span>
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          秘密厳守
+        </span>
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          仲介手数料0円
+        </span>
+        <span class="hero-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          最短3日でご報告
+        </span>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">
+          無料で相談してみる
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="tel:0989886663" class="btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          お電話で相談
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up d2">
+      <div class="hero-badge">
+        <span class="hero-badge-num">17</span>
+        Years of Trust
+      </div>
+      <div class="illust hero-visual-main">
+        <img src="images/hero-main.webp" alt="土地・建物の買取サポート メインビジュアル" onerror="this.style.display='none'">
+        <div class="illust-icon">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 45 L50 18 L85 45 L85 85 L15 85 Z"/>
+            <path d="M40 85 L40 60 L60 60 L60 85"/>
+            <circle cx="50" cy="35" r="3"/>
+          </svg>
+        </div>
+        <div class="illust-label">Hero Main Illustration</div>
+        <div class="illust-name">hero-main.webp / 1500×1100</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SP-ONLY HERO IMAGE STACK ====== -->
+  <div class="sp-hero-stack">
+    <img src="images/hero-sp1.webp" alt="土地・建物の買取は安心のガーデン買取サポートに全ておまかせ" class="sp-hero-img">
+    <a href="#contact" class="sp-hero-btn">
+      <img src="images/hero-sp2.webp" alt="無料で相談してみる">
+    </a>
+    <a href="tel:0989886663" class="sp-hero-btn">
+      <img src="images/hero-sp3.webp" alt="お電話で相談">
+    </a>
+  </div>
+</section>
+
+<!-- ====== POINTS ====== -->
+<section class="section points">
+  <span class="section-deco">P</span>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-label">Our Point</div>
+      <h2 class="section-title">当社の<span class="accent">6つのポイント</span></h2>
+      <p class="section-sub">沖縄の不動産買取で選ばれ続ける、ガーデンの理由。</p>
+    </div>
+
+    <div class="points-grid">
+      <div class="point-card reveal reveal-delay-1">
+        <div class="point-num">01</div>
+        <div class="illust point-illust">
+          <img src="images/point01.webp" alt="幅広い専門知識で手厚くサポート" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="20" y="20" width="60" height="70" rx="2"/>
+              <line x1="32" y1="38" x2="68" y2="38"/>
+              <line x1="32" y1="52" x2="68" y2="52"/>
+              <line x1="32" y1="66" x2="58" y2="66"/>
+              <circle cx="72" cy="78" r="8"/>
+              <line x1="78" y1="84" x2="84" y2="90"/>
+            </svg>
+          </div>
+          <div class="illust-name">point01.png</div>
+        </div>
+        <h3 class="point-title">幅広い専門知識で<br>手厚くサポート</h3>
+        <p class="point-desc">不動産専門の幅広い知識で、お客さまの大切な資産を誠実に、そして<span class="key-mark">手厚くサポート</span>いたします。</p>
+      </div>
+
+      <div class="point-card reveal reveal-delay-2">
+        <div class="point-num">02</div>
+        <div class="illust point-illust">
+          <img src="images/point02.webp" alt="秘密厳守で周りに気付かれない" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="28" y="42" width="44" height="38" rx="3"/>
+              <path d="M36 42 L36 30 C36 22 42 18 50 18 C58 18 64 22 64 30 L64 42"/>
+              <circle cx="50" cy="60" r="4"/>
+              <line x1="50" y1="64" x2="50" y2="72"/>
+            </svg>
+          </div>
+          <div class="illust-name">point02.png</div>
+        </div>
+        <h3 class="point-title">秘密厳守で<br>周りに気付かれない</h3>
+        <p class="point-desc">ご売却の事実が周囲に知られないよう細心の注意を払い、お客さまのプライバシーを<span class="key-mark">徹底的に守ります</span>。</p>
+      </div>
+
+      <div class="point-card reveal reveal-delay-3">
+        <div class="point-num">03</div>
+        <div class="illust point-illust">
+          <img src="images/point03.webp" alt="沖縄生まれ17年の信頼と実績" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M50 14 L60 36 L84 38 L66 54 L72 78 L50 66 L28 78 L34 54 L16 38 L40 36 Z"/>
+            </svg>
+          </div>
+          <div class="illust-name">point03.png</div>
+        </div>
+        <h3 class="point-title">沖縄生まれ<br>17年の信頼と実績</h3>
+        <p class="point-desc">沖縄に根ざし、設立<span class="key-mark">17年目</span>。地元での豊富な実績と確かな信頼で、安心してお任せいただけます。</p>
+      </div>
+
+      <div class="point-card reveal reveal-delay-1">
+        <div class="point-num">04</div>
+        <div class="illust point-illust">
+          <img src="images/point04.webp" alt="スピーディーな査定・買取り対応" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="50" cy="50" r="34"/>
+              <path d="M50 28v22l16 10"/>
+              <path d="M72 22l8-8"/>
+              <path d="M28 22l-8-8"/>
+              <path d="M36 78l-6 8"/>
+              <path d="M64 78l6 8"/>
+            </svg>
+          </div>
+          <div class="illust-name">point04.png</div>
+        </div>
+        <h3 class="point-title">スピーディーな<br>査定・買取り対応</h3>
+        <p class="point-desc">最短日での現金化も可能。お急ぎの売却にも<span class="key-mark">柔軟に対応</span>いたします。</p>
+      </div>
+
+      <div class="point-card reveal reveal-delay-2">
+        <div class="point-num">05</div>
+        <div class="illust point-illust">
+          <img src="images/point05.webp" alt="現状のままで買い取り可能" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 46L50 22l32 24v36H18z"/>
+              <path d="M40 82V60h20v22"/>
+              <path d="M28 54h10"/>
+              <path d="M62 54h10"/>
+              <path d="M22 82h56"/>
+            </svg>
+          </div>
+          <div class="illust-name">point05.png</div>
+        </div>
+        <h3 class="point-title">現状のままで<br>買い取り可能</h3>
+        <p class="point-desc">リフォーム不要・残置物があってもOK。手間なく<span class="key-mark">そのまま売却</span>いただけます。</p>
+      </div>
+
+      <div class="point-card reveal reveal-delay-3">
+        <div class="point-num">06</div>
+        <div class="illust point-illust">
+          <img src="images/point06.webp" alt="ご状況に合わせた柔軟な査定" onerror="this.style.display='none'">
+          <div class="illust-icon">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 30h56"/>
+              <path d="M28 30v46"/>
+              <path d="M72 30v46"/>
+              <path d="M20 76h60"/>
+              <circle cx="38" cy="50" r="8"/>
+              <circle cx="62" cy="50" r="8"/>
+              <path d="M38 58v10"/>
+              <path d="M62 58v10"/>
+            </svg>
+          </div>
+          <div class="illust-name">point06.png</div>
+        </div>
+        <h3 class="point-title">ご状況に合わせた<br>柔軟な査定</h3>
+        <p class="point-desc">物件の状態や事情に応じて柔軟に査定を行い、他社様では難しいケースでも<span class="key-mark">最大限のご提案</span>に努めます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="section faq">
+  <span class="section-deco">Q</span>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">よくある<span class="accent">ご質問</span></h2>
+      <p class="section-sub">お客さまから多く寄せられる、買取に関するご質問にお答えします。</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open reveal">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">買取価格は何日くらいで結果が分かりますか？</span>
+          <span class="faq-q-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-mark">A</span>
+            <p class="faq-a-text">場所・物件によりますが、<strong>最短で3日でのご報告実績</strong>もございます。お急ぎの方もまずはお気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">売買するときに、仲介手数料はかかりますか？</span>
+          <span class="faq-q-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-mark">A</span>
+            <p class="faq-a-text">当社による<strong>直接買取手続きですと、仲介手数料はかかりません</strong>。余計な費用を気にせず、安心してお取引いただけます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">まだ売買するか決まっていませんが、査定できますか？</span>
+          <span class="faq-q-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-mark">A</span>
+            <p class="faq-a-text">売買が決まっていなくても査定は可能です。<strong>「まずは価格だけ知りたい」</strong>といったご相談も大歓迎です。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">相続がまだ終わっていないのですが、査定できますか？</span>
+          <span class="faq-q-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-mark">A</span>
+            <p class="faq-a-text">相続が完了していなくても、<strong>相続人からのお問い合わせであれば査定することは可能です</strong>。お気軽にご相談ください。</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">売買物件が空き家で、荷物がたくさんありますが、処分できますか？</span>
+          <span class="faq-q-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            <span class="faq-a-mark">A</span>
+            <p class="faq-a-text">買取のご提示の際に<strong>処分費等も併せてご提示</strong>いたします。お荷物の多い空き家でも安心してお任せください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COMPANY ====== -->
+<section class="section company">
+  <div class="section-inner company-inner">
+    <div class="company-text reveal">
+      <div class="section-label">Company</div>
+      <h2 class="section-title">会社<span class="accent">紹介</span></h2>
+      <p class="company-lead">
+        株式会社ガーデンは沖縄に根ざし、設立17年目を迎えました。地域のお客さまの暮らしと資産を守るべく、誠実に取り組んでまいります。
+      </p>
+      <div class="company-badge">
+        <span class="stat"><b>17</b><span>年の信頼と実績</span></span>
+      </div>
+    </div>
+    <div class="company-panel reveal reveal-delay-2">
+      <dl class="company-info">
+        <dt>会社名</dt><dd>株式会社 ガーデン</dd>
+        <dt>所在地</dt><dd>沖縄県那覇市銘苅3丁目6番15号 1F</dd>
+        <dt>代表取締役</dt><dd>田港 朝之</dd>
+        <dt>設立</dt><dd>2008年</dd>
+        <dt>電話番号</dt><dd>098-988-6663</dd>
+        <dt>FAX</dt><dd>098-861-7184</dd>
+        <dt>免許番号</dt><dd>沖縄県知事（4）第3991号</dd>
+        <dt>所属</dt><dd>沖縄県宅地建物取引業協会会員</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="section cta" id="contact">
+  <img src="images/cta-bg.webp" alt="" class="cta-bg-image" onerror="this.style.display='none'">
+  <div class="section-inner cta-inner">
+    <div class="cta-text">
+      <div class="section-label">Contact</div>
+      <h2 class="cta-title">まずはお気軽に<br>ご相談ください</h2>
+      <p class="cta-desc">
+        ご相談・お見積りは無料です。<br>
+        ご家族だけでそっとご相談いただけます。<br>
+        秘密は厳守いたしますので、安心してお問合せください。
+      </p>
+      <div class="cta-actions">
+        <a href="#" class="cta-btn-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          お問合せフォームへ
+        </a>
+        <a href="tel:0989886663" class="cta-btn-tel">
+          <span class="cta-btn-tel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="cta-btn-tel-text">
+            <span class="cta-btn-tel-label">Tel / 9:00 - 18:00</span>
+            <span class="cta-btn-tel-number">098-988-6663</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="cta-visual">
+      <div class="illust cta-visual-main">
+        <img src="images/cta-consultation.webp" alt="無料相談の様子" onerror="this.style.display='none'">
+        <div class="illust-icon">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="30" cy="32" r="10"/>
+            <path d="M14 70 C14 58, 22 52, 30 52 C38 52, 46 58, 46 70"/>
+            <circle cx="70" cy="32" r="10"/>
+            <path d="M54 70 C54 58, 62 52, 70 52 C78 52, 86 58, 86 70"/>
+            <rect x="20" y="78" width="60" height="14" rx="1"/>
+          </svg>
+        </div>
+        <div class="illust-label">Consultation Scene</div>
+        <div class="illust-name">cta-consultation.png</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="images/logo-white.webp" alt="株式会社ガーデン" class="footer-logo-img">
+      </div>
+    </div>
+    <div class="footer-info">
+      〒900-0004　沖縄県那覇市銘苅3丁目6番15号 1F<br>
+      TEL: 098-988-6663　／　FAX: 098-861-7184
+    </div>
+  </div>
+  <div class="footer-copy">© garden.co.ltd  All Rights Reserved</div>
+</footer>
+
+<!-- ====== FLOATING MOBILE CTA ====== -->
+<div class="float-cta">
+  <a href="tel:0989886663" class="float-cta-tel">電話で相談</a>
+  <a href="#contact" class="float-cta-mail">無料お問合せ</a>
+</div>
+
+<!-- ====== BACK TO TOP ====== -->
+<button class="back-to-top" aria-label="ページ上部へ戻る">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    item.classList.toggle('open');
+  });
+});
+
+// Scroll progress bar
+const progressBar = document.querySelector('.scroll-progress');
+const updateProgress = () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  progressBar.style.width = scrolled + '%';
+};
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+// Back to top button
+const backToTop = document.querySelector('.back-to-top');
+const toggleBackToTop = () => {
+  if (window.scrollY > 600) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+};
+window.addEventListener('scroll', toggleBackToTop, { passive: true });
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Reveal on scroll using IntersectionObserver
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Also mark the section if needed (for company-stat bounce)
+      const section = entry.target.closest('.section');
+      if (section) section.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
