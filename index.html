@@ -1491,6 +1491,19 @@ a { color: inherit; }
   display: inline-block;
   animation: bounceIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
+
+/* --- スマホ表示（画面幅768px以下など）の場合 --- */
+@media screen and (max-width: 768px) {
+  /* PC用の画像エリアを完全に非表示にする */
+  .hero-visual {
+    display: none !important;
+  }
+  
+  /* スマホ用の画像エリアを表示する */
+  .sp-hero-stack {
+    display: block; 
+  }
+}
 </style>
 </head>
 <body>
@@ -1588,15 +1601,13 @@ a { color: inherit; }
   </div>
 
   <!-- ====== SP-ONLY HERO IMAGE STACK ====== -->
-  <div class="sp-hero-stack">
-    <img src="images/hero-sp1.webp" alt="土地・建物の買取は安心のガーデン買取サポートに全ておまかせ" class="sp-hero-img">
-    <a href="#contact" class="sp-hero-btn">
-      <img src="images/hero-sp2.webp" alt="無料で相談してみる">
-    </a>
-    <a href="tel:0989886663" class="sp-hero-btn">
-      <img src="images/hero-sp3.webp" alt="お電話で相談">
-    </a>
-  </div>
+<div class="sp-hero-stack">
+  <img src="images/hero-sp2.webp" alt="不動産の買取は安心のガーデン買取プレミアムに全ておまかせ" class="sp-hero-img">
+
+  <a href="tel:0989886663" class="sp-hero-btn">
+    <img src="images/hero-sp3.webp" alt="お電話で相談">
+  </a>
+</div>
 </section>
 
 <!-- ====== POINTS ====== -->
